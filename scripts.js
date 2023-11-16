@@ -39,16 +39,17 @@ popup.addEventListener('focusin', (event) => {
         firstElement.focus();
     }
 });
-
-// Добавляем обработчик события для закрытия по клику вне всплывающего окна
+// Добавляем обработчик событий для закрытия модального окна при клике вне его области.
 document.addEventListener('click', (event) => {
-    const isClickInsidePopup = popup.contains(event.target);
-    const isClickOnOpenButton = event.target === openButton;
-
-    if (!isClickInsidePopup && !isClickOnOpenButton) {
-        popup.style.display = 'none';
+    if (event.target.classList.contains('modal-backdrop')) {
+        closeModal();
     }
 });
+
+// Функция закрытия модального окна
+const closeModal = () => {
+    popup.style.display = 'none';
+};
 
   const inputsColor = document.querySelectorAll('input[name=product_color]');
   const formColorLabel = document.getElementById('productColorValue');
