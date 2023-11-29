@@ -8,7 +8,7 @@ const lastElement = focusableElements[focusableElements.length - 1];
 
 openButton.addEventListener('click', () => {
     popup.style.display = 'block';
-    popup.focus(); // Установка фокуса на всплывающее окно
+    closeButton.focus(); // Установка фокуса на кнопку "Закрыть всплывающее окно"
 });
 
 closeButton.addEventListener('click', () => {
@@ -53,26 +53,56 @@ const closeModal = () => {
 
   const inputsColor = document.querySelectorAll('input[name=product_color]');
   const formColorLabel = document.getElementById('productColorValue');
+formColorLabel.innerText = 'White';
+
   inputsColor.forEach((input) => {
     input.addEventListener('change', (e) => {
       formColorLabel.innerText = e.target.dataset.nameDisplay;
     });
   });
 
-  const inputsQuantity = document.querySelectorAll('.input-quantity');
-  inputsQuantity.forEach((input) => {
-    const inputField = input.querySelector('.input-quantity__field');
-    const inputBtnIncrease = input.querySelector('.input-quantity__btn[data-action=increase]');
-    const inputBtnDecrease = input.querySelector('.input-quantity__btn[data-action=decrease]');
-    inputBtnIncrease.addEventListener('click', () => {
-      const initialValue = inputField.value * 1;
-      inputField.value = initialValue + 1; 
+    const quantityInput = document.getElementById('productQuantity');
+    const quantityDisplay = document.getElementById('quantityDisplay');
+    const decreaseBtn = document.getElementById('decreaseQuantityBtn');
+    const increaseBtn = document.getElementById('increaseQuantityBtn');
+
+    // Функция для обновления содержимого span
+    function updateQuantityDisplay() {
+      quantityDisplay.textContent = quantityInput.value;
+
+      // Устанавливаем таймер на 3 секунды
+      setTimeout(() => {
+        quantityDisplay.textContent = ''; // Очищаем значение после 3 секунд
+      }, 50);
+    }
+
+    // Вызов при загрузке страницы
+    updateQuantityDisplay();
+
+    // Обработчик события для уменьшения количества
+    decreaseBtn.addEventListener('click', () => {
+      decreaseQuantity();
     });
-    inputBtnDecrease.addEventListener('click', () => {
-      const initialValue = inputField.value * 1;
-      if (initialValue > 1) inputField.value = initialValue - 1;
-    });    
-  });
+
+    // Обработчик события для увеличения количества
+    increaseBtn.addEventListener('click', () => {
+      increaseQuantity();
+    });
+
+    // Обработчик события для изменения вручную в поле ввода
+    quantityInput.addEventListener('input', () => {
+      updateQuantityDisplay();
+    });
+
+    function decreaseQuantity() {
+      quantityInput.value = Math.max(1, parseInt(quantityInput.value) - 1);
+      updateQuantityDisplay();
+    }
+
+    function increaseQuantity() {
+      quantityInput.value = parseInt(quantityInput.value) + 1;
+      updateQuantityDisplay();
+    }
 
   const accordions = document.querySelectorAll('.accordion__item');
   accordions.forEach((accordion) => {

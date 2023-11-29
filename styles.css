@@ -713,6 +713,31 @@ fieldset legend {
   padding: 10px 0;
   text-decoration: underline;
 }
+
+    .skip-link {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 10px 15px;
+      background: #10F3AF;
+      transform: translateY(-100%);
+    }
+
+.sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+    .skip-link:focus {
+      transform: translateY(0);
+      color: #18191c;
+    }
     
     .close {
         position: absolute;

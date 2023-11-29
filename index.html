@@ -10,6 +10,7 @@
 	<body>
 		<div class="main-grid">
 			<header class="header">
+				<a href="#skipLinkTarget" class="skip-link">Skip to content</a>
 				<div class="container header__container">
 					<nav class="header__menu-main" aria-label="Primary">
 						<ul class="menu">
@@ -25,9 +26,11 @@
 							<li class="menu__item">
 								<a class="menu__link" href="#">Company</a>
 							</li>
-							<a class="header__logo" href="/">
-								<img class="header__logo-picture" src="images/logo.svg" alt="Susparsa Home Page">
-							</a>
+							<li class="menu__item">
+								<a class="header__logo" href="/">
+									<img class="header__logo-picture" src="images/logo.svg" alt="Susparsa Home Page">
+								</a>
+							</li>
 							<li class="menu__item">
 								<a class="menu__link" href="#">Account</a>
 							</li>
@@ -63,10 +66,10 @@
 							<h1 class="product-card__title" id="productName">White unisex t-shirt</h1>
 							<p class="product-card__price">EUR 40</p>
 							<p class="product-card__infolabel">Tax included</p>
-							<form class="product-card__form" action="#">
+							<form class="product-card__form" action="#" aria-label="Order parameters">
 								<div class="product-card__parameter">
-									<div class="product-card__label">Size</div>
-									<select class="product-size">
+									<label class="product-card__label" for="product-size">Size</label>
+									<select class="product-size" id="product-size">
 										<option value="xs">XS</option>
 										<option value="s">S</option>
 										<option value="m">M</option>
@@ -74,11 +77,12 @@
 										<option value="xl">XL</option>
 									</select>
 									<button class="size-guide-link modal-target" id="openButton" type="button">Size Guide</button>
-<div class="modal"  tabindex="0" id="popup" aria-modal="true" role="dialog">
+									<div class="modal"  tabindex="0" id="popup" aria-modal="true" role="dialog">
 										<div class="modal-backdrop">
 											<div class="modal-body size-guide" id="modalwin">
-												<h3 class="heading-2">Size guide</h3>
 												        <button class="close" id="closeButton" type="button" tabindex="0">Close</button>
+												<h3 class="heading-2">Size guide</h3>
+
 												<p>Some description about the sizes</p>
 												<table class="size-guide__table">
 													<tr>
@@ -108,7 +112,7 @@
 
 								</div>
 								<fieldset class="product-card__parameter">
-									<legend class="product-card__label">Color<span> - <span id="productColorValue">White</span></span></legend>
+									<legend class="product-card__label">Color<span> - <span id="productColorValue"></span></span></legend>
 									<ul class="input-group">
 										<li class="input-group__item">
 											<label class="input-radio">
@@ -160,14 +164,15 @@
 										</li>										
 									</ul>										
 								</fieldset>
-								<div class="product-card__parameter product-card__parameter_last">
-									<span class="product-card__label">Quantity</span>
+								<fieldset class="product-card__parameter product-card__parameter_last">
+									<legend class="product-card__label">Quantity</legend>
 									<div class="input-quantity">
-										<button class="input-quantity__btn" data-action="decrease" type="button">&minus;</button>
-										<input type="number" class="input-quantity__field" id="productQuantity" name="product_quantity" value="1">
-										<button class="input-quantity__btn" data-action="increase" type="button">&plus;</button>
+										<button class="input-quantity__btn" data-action="decrease" type="button" id="decreaseQuantityBtn" aria-label="decrease quantity">&minus;</button>
+										<input type="number" class="input-quantity__field" id="productQuantity" name="product_quantity" value="1" aria-label="Quantity">
+										<button class="input-quantity__btn" data-action="increase" type="button" id="increaseQuantityBtn" aria-label="Increase quantity">&plus;</button>
+										<span class="sr-only" role="status" aria-live="polite" id="quantityDisplay"></span>
 									</div>
-								</div>
+								</fieldset>
 								<button class="btn btn_secondary btn_hollow">Add to cart</button>
 								<button class="btn btn_primary">Buy it now</button>
 							</form>
@@ -180,7 +185,7 @@
 							<div class="product-card__photo-big">
 								<img class="product-card__photo-big-picture" src="images/photo1.jpg" srcset="images/photo1_x2.jpg 2x" alt="A Girl in WhiteT-shirt">
 							</div>
-							<div class="accordion" aria-label="Product info">
+							<section class="accordion" aria-label="Product info">
 								<div class="accordion__item">
 									<h2 id="productInfo1">
 										<button aria-expanded="false" aria-controls="productInfo1Body" class="accordion__item-title" >Sizing & Fit</button>
@@ -199,16 +204,16 @@
 									</h2>
 									<div class="accordion__item-body" id="productInfo3Body" aria-labelledby="productInfo3">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</div>
 								</div>
-							</div>
+							</section>
 						</div>
 					</div>
 
-					<div class="section" aria-labelledby="labelProductsSimiilar">
-						<h2 class="heading-2 products-similar__heading-2">Video about the product</h2>
+					<section class="section" aria-labelledby="labelProductsSimiilar">
+						<h2 class="heading-2 products-similar__heading-2" id="labelProductsSimiilar">Video about the product</h2>
 						<div class="product-video_container">
 							<iframe width="100%" height="500" src="https://www.youtube.com/embed/9XDvpm7sLVg?si=clINFdoVQuk20KPS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 						</div>
-					</div>
+					</section>
 
 					<div class="section products-similar">
 						<h2 class="heading-2 products-similar__heading-2">You may also like</h2>
