@@ -112,7 +112,7 @@
 
 								</div>
 								<fieldset class="product-card__parameter">
-									<legend class="product-card__label">Color<span> - <span id="productColorValue"></span></span></legend>
+									<legend class="product-card__label">Color<span> - <span id="productColorValue" role="status" aria-live="polite"></span></span></legend>
 									<ul class="input-group">
 										<li class="input-group__item">
 											<label class="input-radio">
@@ -379,12 +379,12 @@
 							<form class="form" action="#">
 								<div class="form__input-group">
 									<label>
-									<input class="checkbox" type="checkbox" name="agree" id="agree"> I agree to give you all my data
+									<input class="checkbox" type="checkbox" name="agree" id="agree" required> I agree to give you all my data
 									</label>
 								</div>
 
 								<div class="form__input-group">
-								<input class="input" type="email" name="email" id="email" placeholder="Email">
+								<input class="input" type="email" name="email" id="email" placeholder="Email" required>
 								<button class="btn btn_primary">Subscribe</button>
 								</div>
 
