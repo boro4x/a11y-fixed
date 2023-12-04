@@ -48,7 +48,7 @@
 			<main class="page-content">
 				<div class="container">
 					<nav aria-label="breadcrumbs">
-						<ul class="breadcrumbs">
+						<ol class="breadcrumbs">
 							<li class="breadcrumbs__item">
 								<a class="breadcrumbs__link" href="#">Home</a>
 							</li>
@@ -56,9 +56,9 @@
 								<a class="breadcrumbs__link" href="#">Women</a>
 							</li>
 							<li class="breadcrumbs__item breadcrumbs__item_active">
-								<span class="breadcrumbs__current">White unisex t-shirt</span>
+								<span class="breadcrumbs__current" aria-current="page">White unisex t-shirt</span>
 							</li>														
-						</ul>
+						</ol>
 					</nav>
 
 					<div class="product-card" id="skipLinkTarget">
@@ -215,32 +215,36 @@
 						</div>
 					</section>
 
-					<div class="section products-similar">
-						<h2 class="heading-2 products-similar__heading-2">You may also like</h2>
+					<section class="section products-similar" aria-labelledby="You-like">
+						<h2 class="heading-2 products-similar__heading-2" id="You-like">You may also like</h2>
 						<div class="products-grid">
 							<div class="products-grid__item">
 								<a href="#" class="products-grid__item-photo">
 									<img src="images/photo2.jpg" class="products-grid__item-picture" srcset="images/photo2_x2.jpg 2x" alt="A girl in a purple hoodi">
 								</a>
 								<h3 class="products-grid__item-name"><a href="#">purple hoodi</a></h3>
-								<div class="colors-palette products-grid__item-colors-palette">
-									<div class="colors-palette__item">
-										<span class="colors-palette__sample" style="background-color: #C88252;" aria-label="orange">
+								<ul class="colors-palette products-grid__item-colors-palette" aria-label="available colors">
+									<li class="colors-palette__item">
+										<span class="colors-palette__sample" style="background-color: #C88252;">
+										<span class="v-h">orange</span>
 										</span>
-									</div>
-									<div class="colors-palette__item">
-										<span class="colors-palette__sample" style="background-color: #e04acc;" aria-label="pink">
+									</li>
+									<li class="colors-palette__item">
+										<span class="colors-palette__sample" style="background-color: #e04acc;">
+										<span class="v-h">pink</span>
 										</span>
-									</div>
-									<div class="colors-palette__item">
-										<span class="colors-palette__sample" style="background-color: #292fad;" aria-label="blue">
+									</li>
+									<li class="colors-palette__item">
+										<span class="colors-palette__sample" style="background-color: #292fad;">
+										<span class="v-h">blue</span>
 										</span>
-									</div>
-									<div class="colors-palette__item">
-										<span class="colors-palette__sample" style="background-color: #68da00;" aria-label="green">
+									</li>
+									<li class="colors-palette__item">
+										<span class="colors-palette__sample" style="background-color: #68da00;">
+										<span class="v-h">green</span>
 										</span>
-									</div>
-								</div>
+									</li>
+								</ul>
 								<p class="products-grid__item-price">
 									EUR 40
 								</p>
@@ -250,20 +254,23 @@
 									<img src="images/photo3.jpg" class="products-grid__item-picture" srcset="images/photo3_x2.jpg 2x" alt="A Guy in a Blue T-shirt">
 								</a>
 								<h3 class="products-grid__item-name"><a href="#">Very Long T-shirt</a></h3>
-								<div class="colors-palette products-grid__item-colors-palette">
-									<div class="colors-palette__item">
-										<span class="colors-palette__sample" style="background-color: red;" aria-label="red">
+								<ul class="colors-palette products-grid__item-colors-palette" aria-label="available colors">
+									<li class="colors-palette__item">
+										<span class="colors-palette__sample" style="background-color: red;">
+										<span class="v-h">red</span>
 										</span>
-									</div>
-									<div class="colors-palette__item">
-										<span class="colors-palette__sample" style="background-color: green;" aria-label="green">
+									</li>
+									<li class="colors-palette__item">
+										<span class="colors-palette__sample" style="background-color: green;">
+										<span class="v-h">green</span>
 										</span>
-									</div>
-									<div class="colors-palette__item">
-										<span class="colors-palette__sample" style="background-color: blue;" aria-label="blue">
+									</li>
+									<li class="colors-palette__item">
+										<span class="colors-palette__sample" style="background-color: blue;">
+										<span class="v-h">blue</span>
 										</span>
-									</div>
-								</div>
+									</li>
+								</ul>
 								<p class="products-grid__item-price">
 									EUR 40
 								</p>
@@ -276,35 +283,39 @@
 									<img src="images/photo4.jpg" class="products-grid__item-picture" srcset="images/photo4_x2.jpg 2x" alt="A Girl in a green T-shirt">
 								</a>
 								<h3 class="products-grid__item-name"><a href="#">Green t-shirt</a></h3>
-								<div class="colors-palette products-grid__item-colors-palette">
-									<div class="colors-palette__item">
-										<span class="colors-palette__sample" style="background-color: #C88252;" aria-label="orange">
+								<ul class="colors-palette products-grid__item-colors-palette" aria-label="available colors">
+									<li class="colors-palette__item">
+										<span class="colors-palette__sample" style="background-color: #C88252;">
+										<span class="v-h">orange</span>
 										</span>
-									</div>
-									<div class="colors-palette__item">
-										<span class="colors-palette__sample" style="background-color: #e04acc;" aria-label="pink">
+									</li>
+									<li class="colors-palette__item">
+										<span class="colors-palette__sample" style="background-color: #e04acc;">
+										<span class="v-h">pink</span>
 										</span>
-									</div>
-									<div class="colors-palette__item">
-										<span class="colors-palette__sample" style="background-color: #292fad;" aria-label="blue">
+									</li>
+									<li class="colors-palette__item">
+										<span class="colors-palette__sample" style="background-color: #292fad;">
+										<span class="v-h">blue</span>
 										</span>
-									</div>
-									<div class="colors-palette__item">
-										<span class="colors-palette__sample" style="background-color: #68da00;" aria-label="green">
+									</li>
+									<li class="colors-palette__item">
+										<span class="colors-palette__sample" style="background-color: #68da00;">
+										<span class="v-h">green</span>
 										</span>
-									</div>
-								</div>
+									</li>
+								</ul>
 								<p class="products-grid__item-price">
 									EUR 40
 								</p>
 							</div>
 
-						</div>						
+						</section>						
 					</div>
 				</div>
 			</main>
 
-			<footer class="footer">
+			<footer class="footer" aria-label="footer">
 				<div class="container footer__container">
 					<div class="footer__columns">
 						<section class="footer__col">
@@ -332,7 +343,7 @@
 						</section>
 						<section class="footer__col">
 							<h2 class="footer__heading">Company</h2>
-							<nav aria-label="Footer primary">
+							<div>
 								<ul class="footer__list">
 									<li class="footer__list-item">
 										<a class="footer__list-link" href="#">Woman</a>
@@ -350,7 +361,7 @@
 										<a class="footer__list-link" href="#">Our Materials</a>
 									</li>
 								</ul>								
-							</nav>
+							</div>
 						</section>
 						<section class="footer__col">
 							<h2 class="footer__heading">Useful links</h2>
@@ -393,8 +404,8 @@
 					</div>
 					<small class="footer__copyright">© Susparsa 2021</small>
 				</div>
-			</div>
-		</footer>
+			</footer>
+		</div>
 		<script src="scripts.js"></script>
 	</body>
 </html>
